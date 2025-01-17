@@ -1,0 +1,11 @@
+The following CSS code snippet demonstrates an uncommon issue where the `calc()` function is used improperly, resulting in unexpected behavior:
+
+```css
+.element {
+  width: calc(100% - 10px);
+  /* Incorrect usage of calc() */
+  height: 100px;
+}
+```
+
+The problem lies in the calculation.  If the parent element of `.element` doesn't have a defined width, the `calc(100% - 10px)` expression might not work as expected because the 100% is based on the parent's width, which is not defined. This will not cause an error message, but instead unexpected layout issues.
