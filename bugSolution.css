@@ -1,0 +1,21 @@
+To fix this issue, ensure that the parent container of the `.element` class has a defined width.  Here's how you can modify the CSS to resolve the problem:
+
+```css
+.container {
+  width: 500px; /* Define a specific width for the parent */
+}
+
+.element {
+  width: calc(100% - 10px);
+  height: 100px;
+}
+```
+
+By setting the width of the parent element (`.container`), the `calc()` function in the child element's width will now function correctly, correctly subtracting 10px from the parent's width.  Alternatively, remove reliance on the parent's width altogether if that's not feasible. For example: 
+
+```css
+.element {
+  width: 490px; /* Specific width */
+  height: 100px;
+}
+```
